@@ -9,6 +9,6 @@ Set set= new HashSet();
             nums[j++] = value;
             }
 }
-return j;
+      return j;
     }
 }
