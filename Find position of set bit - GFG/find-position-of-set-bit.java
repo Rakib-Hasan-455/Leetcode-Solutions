@@ -24,22 +24,14 @@ class GFG {
 
 class Solution {
     static int findPosition(int n) {
+        // Your code here
         int count = 0;
         int position = 0;
-        int i = 1;
         while (n > 0){
-            if ((n & 1)==1) {
-                position = i;
-            }
             count += n & 1;
-            i++;
+            position++;
             n >>= 1;
         }
-        if (count == 0 || count > 1) {
-            position = -1;
-        } else if (count == 1) {
-            return position;
-        }
-        return position;
+        return count == 1? position: -1;
         }
 };
