@@ -39,21 +39,20 @@ class Solution
 {
     public int[] singleNumber(int[] nums)
     {
-        // Code here
-        HashSet<Integer> set = new HashSet<>();
+        int xXorY = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (set.contains(nums[i])) {
-                set.remove(nums[i]);
-            } else {
-                set.add(nums[i]);
+            xXorY ^= nums[i];
+        }
+        // 3 ^ 4 = 7 = 111
+        int rSbm = xXorY & -xXorY; // 111 ka right most bit 001
+        int x = 0, y = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if ((nums[i] & rSbm) == 0) { // 001 & 001 = 1, 
+                x ^= nums[i];
+            } else { // 001 ^ 000 = 0, 000 ^ 
+                y ^= nums[i]; 
             }
         }
-        int i=0;
-        int[] nonRepeat = new int[2];
-        for (int x: set) {
-            nonRepeat[i++] = x;
-        }
-        Arrays.sort(nonRepeat);
-        return nonRepeat;
+        return x < y ? new int[]{x, y}: new int[]{y, x};
     }
 }
