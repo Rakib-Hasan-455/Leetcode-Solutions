@@ -38,6 +38,7 @@ class Solution{
     public static boolean isPowerofTwo(long n){
         
         // Your code here
+                // Your code here
         if (n == 1) {
             return true;
         }
@@ -48,7 +49,9 @@ class Solution{
                 return true;
             }
         }
-        return false;      
+        return false;
+
+        
     }
     
 }
