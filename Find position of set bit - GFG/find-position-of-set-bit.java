@@ -24,7 +24,8 @@ class GFG {
 
 class Solution {
     static int findPosition(int n) {
-        // Your code here
+        // code here
+        
         int count = 0;
         int position = 0;
         while (n > 0){
@@ -33,5 +34,6 @@ class Solution {
             n >>= 1;
         }
         return count == 1? position: -1;
-        }
+
+    }
 };
