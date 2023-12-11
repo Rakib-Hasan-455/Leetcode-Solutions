@@ -14,6 +14,8 @@ class Solution{
     // Function to find number of bits needed to be flipped to convert A to B
     public static int countBitsFlip(int a, int b){
         
+        // Your code here
+        
         int aXorB = a ^ b;
         int setBitCount = 0;
         while (aXorB != 0) {
@@ -21,7 +23,6 @@ class Solution{
             aXorB >>= 1;
         }
         return setBitCount;
-        
     }
     
     
