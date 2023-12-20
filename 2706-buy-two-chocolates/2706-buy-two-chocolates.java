@@ -1,7 +1,7 @@
 class Solution {
     public int buyChoco(int[] prices, int money) {
-        int lowCost1 = Integer.MAX_VALUE, lowCost1Index = -1;
-        int lowCost2 = Integer.MAX_VALUE;
+        int lowCost1 = 999;
+        int lowCost2 = 999;
         for(int i = 0; i < prices.length; i++) {
             if(prices[i] <= lowCost1) {
                 lowCost2 = lowCost1;
