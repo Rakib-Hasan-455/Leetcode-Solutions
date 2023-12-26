@@ -1,10 +1,12 @@
 class Solution {
     public String reverseVowels(String s) {
         char[] myNameChars = s.toCharArray();
+        boolean[] vowels = new boolean[128];
+        for(char c : "aeiouAEIOU".toCharArray()) vowels[c]=true;
         int leftPointer = 0, rightPointer = s.length() - 1;
         while (leftPointer < rightPointer) {
-            boolean leftIsVowel = isVowel(myNameChars[leftPointer]);
-            boolean rightIsVowel =  isVowel(myNameChars[rightPointer]);
+            boolean leftIsVowel = vowels[myNameChars[leftPointer]];
+            boolean rightIsVowel =  vowels[myNameChars[rightPointer]];
 
             if (leftIsVowel && rightIsVowel) {
                 char temp = myNameChars[leftPointer];
@@ -20,10 +22,5 @@ class Solution {
             }
         }
         return String.valueOf(myNameChars);
-    }
-    
-    private boolean isVowel(char c) {
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
-                || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
     }
 }
