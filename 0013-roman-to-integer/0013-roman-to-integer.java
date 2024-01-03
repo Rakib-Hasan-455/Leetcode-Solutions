@@ -1,9 +1,8 @@
 class Solution {
     public int romanToInt(String s) {
         int sum = 0, prevValue = Integer.MAX_VALUE, value = 0;
-        char[] charArr = s.toCharArray();
-        for(int i = 0; i < charArr.length; i++) {
-            switch(charArr[i]){
+        for(char c: s.toCharArray()) {
+            switch(c){
                 case 'I':value=1;break;
                 case 'V':value=5;break;
                 case 'X':value=10;break;
