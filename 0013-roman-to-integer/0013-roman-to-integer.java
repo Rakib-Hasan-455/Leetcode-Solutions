@@ -1,9 +1,17 @@
 class Solution {
     public int romanToInt(String s) {
-        int sum = 0, prevValue = Integer.MAX_VALUE;
+        int sum = 0, prevValue = Integer.MAX_VALUE, value = 0;
         char[] charArr = s.toCharArray();
-        for(int i = 0; i < charArr.length; i++) {
-            int value = getValue(charArr[i]);
+        for(int i = 0; i < s.length(); i++) {
+            switch(s.charAt(i)){
+                case 'I':value=1;break;
+                case 'V':value=5;break;
+                case 'X':value=10;break;
+                case 'L':value=50;break;
+                case 'C':value=100;break;
+                case 'D':value=500;break;
+                case 'M':value=1000;break;
+            }
             if(prevValue < value) {
                 sum -= prevValue*2;
             }
@@ -12,17 +20,5 @@ class Solution {
         }
         return sum;
     }
-    
-    private int getValue(char c){
-        switch(c){
-            case 'I' : return 1;
-            case 'V' : return 5;
-            case 'X' : return 10;
-            case 'L' : return 50;
-            case 'C' : return 100;
-            case 'D' : return 500;
-            case 'M' : return 1000;
-            default : return 0;
-        }
-    }
+
 }
