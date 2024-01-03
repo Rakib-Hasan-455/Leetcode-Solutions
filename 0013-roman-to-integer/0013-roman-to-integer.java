@@ -1,9 +1,8 @@
 class Solution {
     public int romanToInt(String s) {
         int sum = 0, prevValue = Integer.MAX_VALUE;
-        char[] charArr = s.toCharArray();
-        for(int i = 0; i < charArr.length; i++) {
-            int value = getValue(charArr[i]);
+        for(char c: s.toCharArray()) {
+            int value = getValue(c);
             if(prevValue < value) {
                 sum -= prevValue*2;
             }
